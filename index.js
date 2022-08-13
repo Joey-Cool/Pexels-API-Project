@@ -1,5 +1,11 @@
 
 let searchForm = document.querySelector('#search-form');
+let logoDiv = document.createElement('div');
+logoDiv.classList.add('logo-div');
+logoDiv.innerHTML = `<img class="logo-img" src="pexels_api_project_logo.png">`
+let navHeader = document.querySelector('#nav-header');
+navHeader.appendChild(logoDiv);
+
 
 searchForm.addEventListener('submit', function(e){
     e.preventDefault();
@@ -41,7 +47,7 @@ searchForm.addEventListener('submit', function(e){
     }
 };
 
-let queryValue = document.querySelector('#search-bar').value;
+let queryValue = document.querySelector('#search-bar').value || 'china';
 
 xhttp.open("GET", `https://api.pexels.com/v1/search?query=${queryValue}`, true);
 xhttp.setRequestHeader('Authorization', '563492ad6f91700001000001a5315a2713fd4f69ac1f28dc9bc85768')

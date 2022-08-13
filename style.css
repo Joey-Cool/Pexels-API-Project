@@ -9,15 +9,27 @@
     margin-right: 6px;
 }
 
-#search-form {
-    margin-left: 20%;
+#nav-header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-left: 50px;
     margin-top: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.logo-div {
+    margin-right: 50px;
+}
+
+.logo-img {
+    height: 50px;
+    border-radius: 10px;
 }
 
 #search-form input {
-    padding: 10px 10px;
-    width: 30%;
+    padding: 15px 10px;
+    width: 800px;
     font-size: 1.2rem;
     background-color: #f1f1f1;
     border: none;
