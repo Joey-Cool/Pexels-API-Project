@@ -2,29 +2,47 @@
     margin: 0;
 }
 
+.white {
+    color: white;
+}
+.margin-right {
+    margin-right: 6px;
+}
+
+#search-form {
+    margin-left: 20%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#search-form input {
+    padding: 10px 10px;
+    width: 30%;
+    font-size: 1.2rem;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 10px;
+}
+
 #photo-header {
     background-color: black;
     color: grey;
     display: flex;
     padding: 10px 15px;
     border-radius: 20px;
+    width: 120px;
+    margin-left: 50px;
 }
 
-.white {
-    color: white;
-}
-.margin-right {
-    margin-right: 3px;
-}
-/* .inline {
-    display: inline-block;
-} */
+
 
 #results {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 10px 50px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .photo-div {
