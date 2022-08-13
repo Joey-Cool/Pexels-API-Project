@@ -2,6 +2,24 @@
     margin: 0;
 }
 
+#photo-header {
+    background-color: black;
+    color: grey;
+    display: flex;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.white {
+    color: white;
+}
+.margin-right {
+    margin-right: 3px;
+}
+/* .inline {
+    display: inline-block;
+} */
+
 #results {
     display: flex;
     flex-wrap: wrap;

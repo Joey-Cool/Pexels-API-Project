@@ -8,9 +8,21 @@ xhttp.onreadystatechange = function() {
        let res = JSON.parse(xhttp.responseText);
        console.log(res);
        let photoContainer = document.querySelector('#results');
- 
-    //    let photoHeader = document.querySelector('#photo-header');
-    //    photoHeader.innerHTML = `<h2>Photos of ${}</h2>`
+       let photoHeader = document.querySelector('#photo-header');
+
+
+       let photoH2 = document.createElement("h2");
+       photoH2.classList.add('white', 'margin-right');
+       photoH2.innerHTML = "Photos";
+
+       let photoCount = document.createElement('h2');
+    //    photoCount.classList.add('inline');
+       photoCount.innerHTML = `${res.total_results}`;
+
+       photoHeader.appendChild(photoH2);
+       photoHeader.appendChild(photoCount);
+        
+    //    photoHeader.innerHTML = `<h2><span>Photos</span> ${res.total_results}</h2>`;
        
        let photoData = res.photos.map(function(photo){
         console.log(photo);
