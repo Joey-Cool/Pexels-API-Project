@@ -48,15 +48,15 @@
 
 
 #results {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 10px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 10px auto 0;
+    padding: 0 20px;
+    columns: 3;
 }
 
 .photo-div {
-    margin-right: 30px;
     margin-top: 10px;
+}
+
+img {
+    width: 100%;
 }

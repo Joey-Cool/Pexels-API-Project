@@ -6,12 +6,10 @@ logoDiv.innerHTML = `<img class="logo-img" src="pexels_api_project_logo.png">`
 let navHeader = document.querySelector('#nav-header');
 navHeader.appendChild(logoDiv);
 
+function performSearch(query) {
 
-searchForm.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 
             let res = JSON.parse(xhttp.responseText);
@@ -33,28 +31,38 @@ searchForm.addEventListener('submit', function(e){
             photoHeader.appendChild(photoCount);
         
 
-            let photoData = res.photos.map(function(photo){
+
+            res.photos.forEach(function(photo){
             console.log(photo);
             let photoDiv = document.createElement('div');
             photoDiv.classList.add('photo-div');
             photoDiv.innerHTML = `<img src=${photo.src.medium}>`
 
             photoContainer.appendChild(photoDiv);
-            return photo;
 
             });
     
     }
 };
 
-let queryValue = document.querySelector('#search-bar').value || 'china';
 
-xhttp.open("GET", `https://api.pexels.com/v1/search?query=${queryValue}`, true);
+
+xhttp.open("GET", `https://api.pexels.com/v1/search?query=${query}`, true);
 xhttp.setRequestHeader('Authorization', '563492ad6f91700001000001a5315a2713fd4f69ac1f28dc9bc85768')
 xhttp.send();
 
+}
+
+
+searchForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+let queryValue = document.querySelector('#search-bar').value || 'china';
+performSearch(queryValue);
+
 });
 
+performSearch("welcome");
 
 
 
